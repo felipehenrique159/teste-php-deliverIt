@@ -36,7 +36,21 @@ class CorredoresController extends Controller
      */
     public function store(ValidaDadosCorredor $request)
     {
-        //
+        try {
+            Corredores::create($request->all());
+            return  [
+                'result' => 'success',
+                "method" => "store",
+                'message' => 'Dados gravados com sucesso',
+            ];
+        } catch (\Throwable $th) {
+            return [
+                'result' => 'error',
+                "method" => "store",
+                'message' => 'Erro ao inserir',
+                'messageError' => $th->getMessage(),
+            ];
+        }
     }
 
     /**
