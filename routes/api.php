@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CorredoresController;
+use App\Http\Controllers\ProvasController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('corredores', CorredoresController::class);
+Route::resource('provas', ProvasController::class);
