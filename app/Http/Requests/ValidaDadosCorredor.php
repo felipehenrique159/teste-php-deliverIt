@@ -42,7 +42,7 @@ class ValidaDadosCorredor extends FormRequest
             'cpf.cpf' => "Cpf informado não é válido!",
             'cpf.max' => "Cpf não deve conter caracteres especiais!, deve conter apenas 11 dígitos",
             'data_nascimento.required' => 'Data Nascimento é obrigatório!',
-            'data_nascimento.date' => 'Data Nascimento não é uma data válida!'
+            'data_nascimento.date' => 'Data Nascimento não é uma data válida! Ex: YYYY-mm-dd'
         ];
     }
 

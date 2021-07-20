@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidaDadosCorredoresProva;
 use App\Models\CorredoresEmProva;
+use App\Services\CalcularIdadeService;
+use App\Services\CorredoresService;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProvasController extends Controller
@@ -36,14 +39,27 @@ class ProvasController extends Controller
      */
     public function store(ValidaDadosCorredoresProva $request)
     {
-        
         try {
+
+            $idade = (new CorredoresService)->calcularIdade($request->all());
+
+            if ($idade < 18) {
+                throw new Exception("Menor de Idade, não pode se inscrever em prova");
+            }
+
+            $duplicata = (new CorredoresService)->validaDuplicataInscrição($request->all());
+
+            if ($duplicata) {
+                throw new Exception("Corredor já inscrito em prova no mesmo dia");
+            }
+
             CorredoresEmProva::create($request->all());
             return  [
                 'result' => 'success',
                 "method" => "store",
                 'message' => 'Dados gravados com sucesso',
             ];
+
         } catch (\Throwable $th) {
             return [
                 'result' => 'error',

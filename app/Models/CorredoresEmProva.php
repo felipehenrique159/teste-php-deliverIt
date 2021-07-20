@@ -18,4 +18,9 @@ class CorredoresEmProva extends Model
         'id_prova',
     ];
 
+    public function getDatasProvas()
+    {
+        return $this->hasOne(Provas::class,'id','id_prova');
+    }
+
 }

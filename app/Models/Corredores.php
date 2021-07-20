@@ -20,4 +20,6 @@ class Corredores extends Model
         'data_nascimento'
     ];
 
+    
+
 }
