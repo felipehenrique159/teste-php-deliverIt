@@ -42,13 +42,10 @@ class ProvasController extends Controller
         try {
 
             $idade = (new CorredoresService)->calcularIdade($request->all());
-
             if ($idade < 18) {
                 throw new Exception("Menor de Idade, não pode se inscrever em prova");
             }
-
             $duplicata = (new CorredoresService)->validaDuplicataInscrição($request->all());
-
             if ($duplicata) {
                 throw new Exception("Corredor já inscrito em prova no mesmo dia");
             }
@@ -59,7 +56,6 @@ class ProvasController extends Controller
                 "method" => "store",
                 'message' => 'Dados gravados com sucesso',
             ];
-
         } catch (\Throwable $th) {
             return [
                 'result' => 'error',

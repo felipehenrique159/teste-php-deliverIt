@@ -20,4 +20,14 @@ class ResultadosCorredores extends Model
         'horario_conclusao_prova'
     ];
 
+    public function getCorredor()
+    {
+        return $this->hasOne(Corredores::class,'id','id_corredor');
+    }
+
+    public function getProva()
+    {
+        return $this->hasOne(Provas::class,'id','id_prova');
+    }
+
 }

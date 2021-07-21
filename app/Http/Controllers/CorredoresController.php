@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidaDadosCorredor;
 use App\Models\Corredores;
-use App\Services\CalcularIdadeService;
 use Illuminate\Http\Request;
 
 class CorredoresController extends Controller
@@ -35,9 +34,11 @@ class CorredoresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ValidaDadosCorredor $request)
-    {   
 
+
+
+    public function store(ValidaDadosCorredor $request)
+    {
         try {
             Corredores::create($request->all());
             return  [

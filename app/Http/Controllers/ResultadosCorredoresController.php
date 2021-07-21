@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidaDadosResultadosCorredores;
 use App\Models\ResultadosCorredores;
+use App\Services\CorredoresService;
+use App\Services\ResultadosCorredorService;
 use Illuminate\Http\Request;
 
 class ResultadosCorredoresController extends Controller
@@ -15,7 +17,7 @@ class ResultadosCorredoresController extends Controller
      */
     public function index()
     {
-        //
+       return (new ResultadosCorredorService)->listarTodosResultados();
     }
 
     /**
