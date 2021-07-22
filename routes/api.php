@@ -25,3 +25,4 @@ use Illuminate\Support\Facades\Route;
 Route::resource('corredores', CorredoresController::class);
 Route::resource('provas', ProvasController::class);
 Route::resource('resultados', ResultadosCorredoresController::class);
+Route::get('resultados-idade', [ResultadosCorredoresController::class,'listarResultadosFiltroIdade']);

@@ -19,6 +19,11 @@ class ResultadosCorredoresController extends Controller
     {
        return (new ResultadosCorredorService)->listarTodosResultados();
     }
+    
+    public function listarResultadosFiltroIdade()
+    {   
+        return (new ResultadosCorredorService)->listarPorIdade();
+    }
 
     /**
      * Show the form for creating a new resource.
