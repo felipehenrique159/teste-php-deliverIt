@@ -9,15 +9,11 @@
 
 ## Comandos para rodar a aplicação (Ambiente Docker)
 - cp .env.example .env  (Configurar .env corretamente com o docker)
-- composer install
-- php artisan config:cache (Rodar após a configuração do .env para limpar os cache)
-- php artisan config:clear
 - docker-compose up -d (Para subir os container)
 
 ## Uso de Migrate e Seeder
-
 - Foi criado migrate para as tabelas e seeder para popular a tabela de provas
-- 
+
 ## Comandos
 
 - php artisan migrate
