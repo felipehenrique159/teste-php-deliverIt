@@ -17,7 +17,7 @@
 ## Uso de Migrate e Seeder
 
 - Foi criado migrate para as tabelas e seeder para popular a tabela de provas
-- 
+
 ## Comandos
 
 - php artisan migrate
