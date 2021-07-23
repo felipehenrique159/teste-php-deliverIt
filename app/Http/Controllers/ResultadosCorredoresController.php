@@ -17,12 +17,20 @@ class ResultadosCorredoresController extends Controller
      */
     public function index()
     {
-       return (new ResultadosCorredorService)->listarTodosResultados();
+        try {
+            return (new ResultadosCorredorService)->listarTodosResultados();
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
     }
-    
+
     public function listarResultadosFiltroIdade()
-    {   
-        return (new ResultadosCorredorService)->listarPorIdade();
+    {
+        try {
+            return (new ResultadosCorredorService)->listarResultadosAgrupados();
+        } catch (\Throwable $th) {
+            $th->getMessage();
+        }
     }
 
     /**

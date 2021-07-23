@@ -40,10 +40,9 @@ class ResultadosCorredorService
         return collect($resultados);
     }
 
-    public function listarPorIdade()
+    public function listarResultadosAgrupados()
     {
-        $resultados = $this->listarTodosResultados();
-        $collectionResultados = collect($resultados);
+        $collectionResultados = $this->listarTodosResultados(); 
 
         $classificacao18to25 = $this->filtrarIdadeCollection($collectionResultados, 18, 25);
         $classificacao25to35 = $this->filtrarIdadeCollection($collectionResultados, 25, 35);
@@ -81,7 +80,7 @@ class ResultadosCorredorService
     }
 
     public function adicionaClassificacao($classificacao)
-    {
+    {   
         $count = 1;
         $array = [];
         foreach ($classificacao as $classifica) {
